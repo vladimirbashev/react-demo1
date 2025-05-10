@@ -25,6 +25,7 @@ export default [
     rules: {
       ...js.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
+      'react/prop-types': [0],
       'semi': ['error', 'always'],
       'comma-dangle': ['error', 'never'],
       'quotes': ['error', 'single'],
