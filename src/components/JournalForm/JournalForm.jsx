@@ -1,6 +1,6 @@
 import styles from './JournalForm.module.css';
 import {useEffect, useState} from 'react';
-import Button from '../components/Button/Button.jsx';
+import Button from '../Button/Button.jsx';
 
 
 function JournalForm() {
@@ -12,7 +12,6 @@ function JournalForm() {
 
 	const addJournalItem = (e) => {
 		const formData = new FormData(e.target);
-		console.log(formData);
 		const formProps = Object.fromEntries(formData);
 		e.preventDefault();
 		console.log(formProps);
@@ -28,7 +27,7 @@ function JournalForm() {
 			<input type="date" name="date"/>
 			<input type="text" name="tag" value={inputData} onChange={inputDataChange}/>
 			<textarea name="post" id="post" cols="30" rows="10"></textarea>
-			<Button text="Save"></Button>
+			<Button text="Save" onClick={() => console.log('Pressed')}></Button>
 		</form>
 	);
 }
