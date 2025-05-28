@@ -11,9 +11,9 @@ function JournalForm() {
 	};
 
 	const addJournalItem = (e) => {
+		e.preventDefault();
 		const formData = new FormData(e.target);
 		const formProps = Object.fromEntries(formData);
-		e.preventDefault();
 		console.log(formProps);
 	};
 

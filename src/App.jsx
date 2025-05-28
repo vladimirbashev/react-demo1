@@ -5,8 +5,7 @@ import JournalAddButton from './components/JournalAddButton/JournalAddButton.jsx
 import Body from './layouts/Body/Body.jsx';
 import JournalItem from './components/JournalItem/JournalItem.jsx';
 import CardButton from './components/CardButton/CardButton.jsx';
-import {useState} from 'react';
-import JournalForm from "./components/JournalForm/JournalForm.jsx";
+import JournalForm from './components/JournalForm/JournalForm.jsx';
 
 
 function App() {
