@@ -13,21 +13,24 @@ const INITIAL_ITEMS = [
 	{
 		title: 'Udemy',
 		text: 'Its cool',
-		date: new Date()
+		date: new Date(),
+		id: 1
 	},
 	{
 		title: 'Visiting the city center',
 		text: 'Its beautiful',
-		date: new Date()
+		date: new Date(),
+		id: 2
 	}
 ];
 
 function App() {
 	const [items, setItems] = useState(INITIAL_ITEMS);
 
-	const addItem = item => setItems([...items, {
+	const addItem = item => setItems((oldItems) => [...oldItems, {
 		...item,
-		date: new Date(item.date)
+		date: new Date(item.date),
+		id: Math.max(...oldItems.map(item => item.id)) + 1
 	}]);
 
 	const sortItems = (a, b) => a.date > b.date ? 1 : -1;
@@ -38,8 +41,9 @@ function App() {
 				<Header/>
 				<JournalAddButton/>
 				<JournalList>
-					{items.sort(sortItems).map((el, index) => (
-						<CardButton key={index}>
+					{items.sort(sortItems).map(el => (
+						<CardButton key={el.id}>
+							{el.id}
 							<JournalItem
 								title={el.title}
 								text={el.text}
