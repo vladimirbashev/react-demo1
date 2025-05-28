@@ -6,6 +6,7 @@ import Body from './layouts/Body/Body.jsx';
 import JournalItem from './components/JournalItem/JournalItem.jsx';
 import CardButton from './components/CardButton/CardButton.jsx';
 import JournalForm from './components/JournalForm/JournalForm.jsx';
+import JournalList from './components/JournalList/JournalList.jsx';
 
 
 function App() {
@@ -27,20 +28,22 @@ function App() {
 			<LeftPanel>
 				<Header/>
 				<JournalAddButton/>
-				<CardButton>
-					<JournalItem
-						title={data[0].title}
-						text={data[0].text}
-						date={data[0].date}
-					/>
-				</CardButton>
-				<CardButton>
-					<JournalItem
-						title={data[1].title}
-						text={data[1].text}
-						date={data[1].date}
-					/>
-				</CardButton>
+				<JournalList>
+					<CardButton>
+						<JournalItem
+							title={data[0].title}
+							text={data[0].text}
+							date={data[0].date}
+						/>
+					</CardButton>
+					<CardButton>
+						<JournalItem
+							title={data[1].title}
+							text={data[1].text}
+							date={data[1].date}
+						/>
+					</CardButton>
+				</JournalList>
 			</LeftPanel>
 			<Body>
 				Body
