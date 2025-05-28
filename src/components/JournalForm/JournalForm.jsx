@@ -1,32 +1,21 @@
 import styles from './JournalForm.module.css';
-import {useEffect, useState} from 'react';
 import Button from '../Button/Button.jsx';
 
 
-function JournalForm() {
-	const [inputData, setInputData] = useState('');
-
-	const inputDataChange = (e) => {
-		setInputData(e.target.value);
-	};
-
+function JournalForm({onSubmit}) {
 	const addJournalItem = (e) => {
 		e.preventDefault();
 		const formData = new FormData(e.target);
 		const formProps = Object.fromEntries(formData);
-		console.log(formProps);
+		onSubmit(formProps);
 	};
-
-	useEffect(() => {
-		console.log('inputData обновилось:', inputData);
-	}, [inputData]);
 
 	return (
 		<form className={styles['journal-form']} onSubmit={addJournalItem}>
 			<input type="text" name="title"/>
 			<input type="date" name="date"/>
-			<input type="text" name="tag" value={inputData} onChange={inputDataChange}/>
-			<textarea name="post" id="post" cols="30" rows="10"></textarea>
+			<input type="text" name="tag" />
+			<textarea name="text" id="post" cols="30" rows="10"></textarea>
 			<Button text="Save" onClick={() => console.log('Pressed')}></Button>
 		</form>
 	);
