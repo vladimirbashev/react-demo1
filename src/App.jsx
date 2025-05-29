@@ -3,8 +3,6 @@ import LeftPanel from './layouts/LeftPanel/LeftPanel.jsx';
 import Header from './components/Header/Header.jsx';
 import JournalAddButton from './components/JournalAddButton/JournalAddButton.jsx';
 import Body from './layouts/Body/Body.jsx';
-import JournalItem from './components/JournalItem/JournalItem.jsx';
-import CardButton from './components/CardButton/CardButton.jsx';
 import JournalForm from './components/JournalForm/JournalForm.jsx';
 import JournalList from './components/JournalList/JournalList.jsx';
 import {useState} from 'react';
@@ -33,24 +31,12 @@ function App() {
 		id: Math.max(...oldItems.map(item => item.id)) + 1
 	}]);
 
-	const sortItems = (a, b) => a.date > b.date ? 1 : -1;
-
 	return (
 		<div className='app'>
 			<LeftPanel>
 				<Header/>
 				<JournalAddButton/>
-				<JournalList>
-					{items.sort(sortItems).map(el => (
-						<CardButton key={el.id}>
-							{el.id}
-							<JournalItem
-								title={el.title}
-								text={el.text}
-								date={el.date}
-							/>
-						</CardButton>
-					))}
+				<JournalList items={items}>
 				</JournalList>
 			</LeftPanel>
 			<Body>
