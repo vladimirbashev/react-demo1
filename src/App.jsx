@@ -28,7 +28,7 @@ function App() {
 	const addItem = item => setItems((oldItems) => [...oldItems, {
 		...item,
 		date: new Date(item.date),
-		id: Math.max(...oldItems.map(item => item.id)) + 1
+		id: oldItems.length > 0 ? Math.max(...oldItems.map(item => item.id)) + 1 : 1
 	}]);
 
 	return (
@@ -36,8 +36,7 @@ function App() {
 			<LeftPanel>
 				<Header/>
 				<JournalAddButton/>
-				<JournalList items={items}>
-				</JournalList>
+				<JournalList items={items}></JournalList>
 			</LeftPanel>
 			<Body>
 				Body
