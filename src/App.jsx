@@ -36,7 +36,8 @@ function App() {
 			<LeftPanel>
 				<Header/>
 				<JournalAddButton/>
-				<JournalList items={items}></JournalList>
+				<JournalList items={items}>
+				</JournalList>
 			</LeftPanel>
 			<Body>
 				Body
