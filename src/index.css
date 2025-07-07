@@ -18,9 +18,9 @@ input,
 textarea,
 select {
   color: rgba(255, 255, 255, 0.87);
-  background-color: #181818; /* чтобы фон совпадал с фоном страницы */
-  border: 1px solid rgba(255, 255, 255, 0.3); /* или свой цвет рамки */
-  caret-color: white; /* чтобы курсор был видим */
+  /*background-color: #181818;*/
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  caret-color: white;
 }
 
 body {
