@@ -14,6 +14,14 @@
   -webkit-text-size-adjust: 100%;
 }
 
+input,
+textarea,
+select {
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #181818; /* чтобы фон совпадал с фоном страницы */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* или свой цвет рамки */
+  caret-color: white; /* чтобы курсор был видим */
+}
 
 body {
   margin: 0;
